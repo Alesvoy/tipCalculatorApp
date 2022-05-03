@@ -10,6 +10,8 @@
 
   &:hover {
     cursor: pointer;
+    background: #9fe8df;
+    color: #00474b;
   }
 }
 
@@ -21,4 +23,9 @@
 .btn--light {
   background: #f3f9fa;
   color: #537877;
+}
+
+button[class*='tip__reset'] {
+  color: #00474b;
+  background: rgba($color: #26c2ae, $alpha: 0.2);
 }

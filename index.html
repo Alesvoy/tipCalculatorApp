@@ -30,7 +30,9 @@
               alt="Dollar sign"
               class="input__image input__image--dollar"
             />
-            <input type="number" id="bill" />
+            <div>
+              <input type="number" id="bill" step="0.01" placeholder="0" />
+            </div>
           </div>
 
           <label for="tip" class="mt">Select Tip %</label>
@@ -40,7 +42,12 @@
             <button class="btn">15%</button>
             <button class="btn">25%</button>
             <button class="btn">50%</button>
-            <button class="btn btn--light">Custom</button>
+            <input
+              type="number"
+              step="0.01"
+              class="btn btn--light"
+              placeholder="Custom"
+            />
           </div>
 
           <label for="people" class="mt">Number of People</label>
@@ -50,7 +57,9 @@
               alt="Person img"
               class="input__image input__image--person"
             />
-            <input type="number" id="people" />
+            <div>
+              <input type="number" id="people" placeholder="0" />
+            </div>
           </div>
         </form>
 
