@@ -17,8 +17,58 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-    person Total / person Reset
+    <main>
+      <div class="logo">
+        <img src="./images/logo.svg" alt="Logo image" />
+      </div>
+      <section class="calculator">
+        <form action="POST" class="calculator__form">
+          <label for="bill">Bill</label>
+          <div class="calculator__input">
+            <img
+              src="./images/icon-dollar.svg"
+              alt="Dollar sign"
+              class="input__image input__image--dollar"
+            />
+            <input type="number" id="bill" />
+          </div>
+
+          <label for="tip" class="mt">Select Tip %</label>
+          <div class="calculator__tip">
+            <button class="btn">5%</button>
+            <button class="btn">10%</button>
+            <button class="btn">15%</button>
+            <button class="btn">25%</button>
+            <button class="btn">50%</button>
+            <button class="btn btn--light">Custom</button>
+          </div>
+
+          <label for="people" class="mt">Number of People</label>
+          <div class="calculator__input">
+            <img
+              src="./images/icon-person.svg"
+              alt="Person img"
+              class="input__image input__image--person"
+            />
+            <input type="number" id="people" />
+          </div>
+        </form>
+
+        <div class="calculator__total">
+          <div class="tip__amount">
+            <p class="tip__text">Tip Amount</p>
+            <p class="tip__text--faded">/ Person</p>
+            <h1 class="tip__number">$4.27</h1>
+          </div>
+          <div class="tip__total">
+            <p class="tip__text">Total</p>
+            <p class="tip__text--faded">/ Person</p>
+            <h1 class="tip__number">$32.79</h1>
+          </div>
+          <button class="tip__reset">Reset</button>
+        </div>
+      </section>
+    </main>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
     <script src="./app.js"></script>
   </body>
