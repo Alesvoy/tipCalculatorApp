@@ -53,13 +53,12 @@ main {
   row-gap: 3.2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 .calculator__form {
   width: 31.1rem;
-  height: 55%;
-  padding: 0 0.8rem;
+  height: 45%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -81,20 +80,51 @@ main {
   border: none;
   border-radius: 0.5rem;
 }
-.calculator__total {
-  height: 45%;
-}
 .calculator__tip {
   display: flex;
   flex-wrap: wrap;
   width: 31.1rem;
   gap: 1.6rem 1.656rem;
 }
+.calculator__total {
+  height: 45%;
+  background: #00474b;
+  border-radius: 1rem;
+  width: 32.7rem;
+  height: 25.7rem;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+}
+.calculator__total .tip__reset {
+  margin-top: auto;
+  text-transform: uppercase;
+  width: 100%;
+}
 
 .input__image {
   position: absolute;
   top: 1.687rem;
   left: 1.926rem;
+}
+
+.tip__amount, .tip__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.tip__text {
+  color: #fff;
+  font-size: 1.6rem;
+}
+.tip__text--faded {
+  color: #7f9e9f;
+  font-size: 1.3rem;
+}
+.tip__number {
+  color: #26c2ae;
+  font-size: 3.2rem;
 }
 
 .btn {
@@ -106,6 +136,9 @@ main {
   border-radius: 0.5rem;
   font-size: 2.4rem;
   font-family: inherit;
+}
+.btn:hover {
+  cursor: pointer;
 }
 
 .btn--selected {
