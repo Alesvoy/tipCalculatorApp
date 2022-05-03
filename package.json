@@ -1,0 +1,22 @@
+{
+  "name": "tipcalculatorapp",
+  "version": "1.0.0",
+  "description": "Challenge from Frontendmentor.io",
+  "main": "app.js",
+  "scripts": {
+    "build": "sass --watch --no-source-map ./sass/main.scss style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alesvoy/tipCalculatorApp.git"
+  },
+  "author": "Alejandro Butrón",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alesvoy/tipCalculatorApp/issues"
+  },
+  "homepage": "https://github.com/Alesvoy/tipCalculatorApp#readme",
+  "dependencies": {
+    "sass": "^1.51.0"
+  }
+}
