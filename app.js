@@ -37,6 +37,43 @@
     updateUi();
   });
 
+  let activeBtn = undefined;
+
+  tipContainerEl.addEventListener('click', (e) => {
+    const selectedBtn =
+      e.path[0].localName === 'button' ? e.path[0] : undefined;
+
+    if (selectedBtn && !activeBtn) {
+      selectedBtn.classList.toggle('btn--selected');
+      activeBtn = selectedBtn;
+      state = getValue(activeBtn, 'tip');
+      updateUi();
+    } else if (selectedBtn !== activeBtn && selectedBtn) {
+      activeBtn.classList.toggle('btn--selected');
+      selectedBtn.classList.toggle('btn--selected');
+      activeBtn = selectedBtn;
+      state = getValue(activeBtn, 'tip');
+      updateUi();
+    } else if (selectedBtn === activeBtn && activeBtn) {
+      activeBtn.classList.toggle('btn--selected');
+      activeBtn = undefined;
+    } else if (e.path[0].localName === 'input') {
+      state = getValue(e.path[0], 'tip');
+      activeBtn.classList.toggle('btn--selected');
+      activeBtn = undefined;
+      updateUi();
+    } else if (e.path[0].localName === 'input' && activeBtn) {
+      activeBtn.classList.toggle('btn--selected');
+      state = getValue(activeBtn, 'tip');
+      activeBtn = undefined;
+      updateUi();
+    }
+  });
+
+  resetEl.addEventListener('click', () => {
+    resetUi();
+  });
+
   function getValue(domElement, stateEl) {
     if (!domElement.value) {
       const newArr = domElement.innerText.split('');
@@ -125,37 +162,26 @@
     totalEl.innerText = state.totalPerPerson || '0.00';
   }
 
-  let activeBtn = undefined;
+  function resetUi() {
+    state = {
+      bill: 0,
+      tip: 0,
+      people: 0,
+      zero: true,
+    };
 
-  tipContainerEl.addEventListener('click', (e) => {
-    const selectedBtn =
-      e.path[0].localName === 'button' ? e.path[0] : undefined;
+    billEl.value = 0;
+    peopleEl.value = 0;
+    customEl.value = 0;
 
-    if (selectedBtn && !activeBtn) {
-      selectedBtn.classList.toggle('btn--selected');
-      activeBtn = selectedBtn;
-      state = getValue(activeBtn, 'tip');
-      updateUi();
-    } else if (selectedBtn !== activeBtn && selectedBtn) {
-      activeBtn.classList.toggle('btn--selected');
-      selectedBtn.classList.toggle('btn--selected');
-      activeBtn = selectedBtn;
-      state = getValue(activeBtn, 'tip');
-      updateUi();
-    } else if (selectedBtn === activeBtn && activeBtn) {
-      activeBtn.classList.toggle('btn--selected');
-      activeBtn = undefined;
-    } else if (e.path[0].localName === 'input') {
-      state = getValue(e.path[0], 'tip');
-      activeBtn = undefined;
-      updateUi();
-    } else if (e.path[0].localName === 'input' && activeBtn) {
-      activeBtn.classList.toggle('btn--selected');
-      state = getValue(activeBtn, 'tip');
-      activeBtn = undefined;
-      updateUi();
+    activeBtn = undefined;
+
+    for (let i = 0; i < tipContainerEl.children.length - 1; i++) {
+      tipContainerEl.children[i].classList.remove('btn--selected');
     }
-  });
+
+    updateUi();
+  }
 })();
 
 // Check the how much the tip is going to be
