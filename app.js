@@ -183,13 +183,3 @@
     updateUi();
   }
 })();
-
-// Check the how much the tip is going to be
-
-// Get the amount of the bill
-
-// Get the number of people
-
-// Verify that the bill and number of people are at 0, if not, change reset button to active state
-
-// reset the app state
