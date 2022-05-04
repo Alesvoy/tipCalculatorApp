@@ -106,8 +106,9 @@
       ) / 100;
     newState.totalPerPerson =
       Math.round(
-        (newState.bill * (newState.tip / 100)) / newState.people +
-          newState.bill * 100
+        ((newState.tipPerPerson * newState.people + newState.bill) /
+          newState.people) *
+          100
       ) / 100;
 
     console.log(newState);
