@@ -16,6 +16,7 @@
   const peopleContainerEl = document.querySelector('#peopleContainer');
   const tipAmountEl = document.querySelector('#tipAmount');
   const totalEl = document.querySelector('#total');
+  const resetEl = document.querySelector('.tip__reset');
 
   formEl.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -80,6 +81,7 @@
   function checkZero() {
     if (state.bill === 0) {
       billContainerEl.classList.add('error');
+      resetEl.style.background = 'rgba(38, 194, 174, 0.2)';
 
       return {
         ...state,
@@ -91,6 +93,7 @@
 
     if (state.people === 0) {
       peopleContainerEl.classList.add('error');
+      resetEl.style.background = 'rgba(38, 194, 174, 0.2)';
 
       return {
         ...state,
@@ -101,6 +104,8 @@
     }
 
     if (state.people > 0 && state.bill > 0) {
+      resetEl.style.background = '#26c2ae';
+
       return {
         ...state,
         zero: false,
