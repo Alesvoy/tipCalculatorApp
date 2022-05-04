@@ -212,6 +212,10 @@ button[class*=tip__reset] {
   margin-top: 3.2rem;
 }
 
+.error {
+  border: 2.5px solid #e27052;
+  border-radius: 0.5rem;
+}
 .error::before {
   position: absolute;
   display: block;
@@ -224,8 +228,6 @@ button[class*=tip__reset] {
   right: 0;
   font-size: 1.6rem;
 }
-
-.error:focus {
-  outline: none;
-  border: 2.5px solid #e27052;
+.error input:focus {
+  border: none;
 }

@@ -1,17 +1,21 @@
-.error::before {
-  position: absolute;
-  display: block;
-  content: "Can't be zero";
-  color: #e27052;
-  width: 100%;
-  height: 100%;
-  text-align: right;
-  top: -3rem;
-  right: 0;
-  font-size: 1.6rem;
-}
-
-.error:focus {
-  outline: none;
+.error {
   border: 2.5px solid #e27052;
+  border-radius: 0.5rem;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: "Can't be zero";
+    color: #e27052;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    top: -3rem;
+    right: 0;
+    font-size: 1.6rem;
+  }
+
+  & input:focus {
+    border: none;
+  }
 }

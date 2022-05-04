@@ -30,7 +30,7 @@
               alt="Dollar sign"
               class="input__image input__image--dollar"
             />
-            <div>
+            <div id="billContainer">
               <input type="number" id="bill" step="0.01" placeholder="0" />
             </div>
           </div>
@@ -44,6 +44,7 @@
             <button class="btn">50%</button>
             <input
               type="number"
+              id="custom"
               step="0.01"
               class="btn btn--light"
               placeholder="Custom"
@@ -57,7 +58,7 @@
               alt="Person img"
               class="input__image input__image--person"
             />
-            <div>
+            <div id="peopleContainer">
               <input type="number" id="people" placeholder="0" />
             </div>
           </div>
@@ -69,7 +70,10 @@
               <p class="tip__text">Tip Amount</p>
               <p class="tip__text--faded">/ Person</p>
             </div>
-            <h1 class="tip__number"><span class="span--dollar">$</span>4.27</h1>
+            <h1 class="tip__number">
+              <span class="span--dollar">$</span
+              ><span id="tipAmount">0.00</span>
+            </h1>
           </div>
           <div class="tip__total">
             <div class="tip__textBox">
@@ -77,7 +81,7 @@
               <p class="tip__text--faded">/ Person</p>
             </div>
             <h1 class="tip__number">
-              <span class="span--dollar">$</span>32.79
+              <span class="span--dollar">$</span><span id="total">0.00</span>
             </h1>
           </div>
           <button class="btn btn--selected tip__reset">Reset</button>
